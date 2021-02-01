@@ -1,0 +1,28 @@
+{
+  "name": "backend-potlucks",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=testing jest api/server.test.js --watchAll --verbose --runInBand",
+    "start": "node index.js",
+    "server": "nodemon index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "knex": "^0.21.17",
+    "pg": "^8.5.1",
+    "sqlite3": "^5.0.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.19.0",
+    "jest": "^26.6.3",
+    "nodemon": "^2.0.7"
+  },
+  "description": ""
+}
