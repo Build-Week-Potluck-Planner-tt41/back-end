@@ -186,7 +186,9 @@ ___
 
 #### [POST] "/potlucks/:id/foods/desired/add"
 
-food: "string" | *required* | *valid token required* | *requires valid potluck_id* | *restricted to organizers* |
+food: "string" | *required* | 
+
+|*valid token required* | *requires valid potluck_id* | *restricted to organizers* |
 
 *adds desired foods to potluck with given potluck_id*
 
@@ -196,7 +198,9 @@ food: "string" | *required* | *valid token required* | *requires valid potluck_i
 
 #### [POST] "/potlucks/:id/guests/:guest_id/foods/add"
 
-food: "string" | *required* | *valid token required* | *requires valid potluck_id* | *requires valid guest_id* |
+food: "string" | *required* | 
+
+| *valid token required* | *requires valid potluck_id* | *requires valid guest_id* |
 
 *adds confirmed food to potluck with given potluck_id*
 
