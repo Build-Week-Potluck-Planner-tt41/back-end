@@ -21,11 +21,11 @@ function find (id, role) {
 
 function findByName (name, role) {
   if(role === "organizer") {
-    return db.select("organizer_password as password", "*").from("organizers").where("organizer_name", name).then(res => {
+    return db.select("organizer_password as password", "organizer_name", "organizer_id").from("organizers").where("organizer_name", name).then(res => {
       return res[0];
     });
   } else {
-    return db.select("guest_password as password", "*").from("guests").where("guest_name", name).then(res => {
+    return db.select("guest_password as password", "guest_name", "guest_id").from("guests").where("guest_name", name).then(res => {
       return res[0];
     });
   }
@@ -35,7 +35,7 @@ function addOrganizer(user) {
   return db("organizers")
     .insert({ "organizer_name": user.name, "organizer_password": user.password })
     .then((res) => {
-      return find(res[0], user.role);
+      return findByName(user.name, user.role);
     });
 }
 
@@ -46,7 +46,7 @@ function addGuest(user) {
       "guest_password": user.password,
     })
     .then((res) => {
-      return find(res[0], user.role);
+      return findByName(user.name, user.role);
     });
 }
 

@@ -5,7 +5,15 @@
   "scripts": {
     "test": "cross-env NODE_ENV=testing jest api/server.test.js --watchAll --verbose --runInBand",
     "start": "node index.js",
-    "server": "nodemon index.js"
+    "server": "nodemon index.js",
+    "migrate": "knex migrate:latest",
+    "rollback": "knex migrate:rollback",
+    "migrateh": "heroku run knex migrate:latest -a backend-potlucks",
+    "rollbackh": "heroku run knex migrate:rollback -a backend-potlucks"
+  },
+  "engines": {
+    "node": "14.15.4",
+    "npm": "6.14.11"
   },
   "keywords": [],
   "author": "",
