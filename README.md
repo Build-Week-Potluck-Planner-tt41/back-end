@@ -208,6 +208,35 @@ food: "string" | *required* |
 
 ---
 
+///ADD NEW POTLUCK///
+
+#### [POST] "/potlucks"
+
+name: "string" | *required* | 
+time: "string | *required* |
+date: "string | *required* |
+location: "string | *required* |
+organizer_id: num | *required* |
+
+
+| *valid token required* | *only organizers can access* | 
+
+*Returns all potlucks*
+
+---
+
+///INVITE GUEST///
+
+#### [POST] "/potlucks/:id/guests"
+
+guest_id: num | *required* | 
+
+| *valid token required* | *only organizers can access* | *valid potluck_id required* |
+
+*Returns success message*
+
+---
+
 
 
 
