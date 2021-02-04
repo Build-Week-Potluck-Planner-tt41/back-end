@@ -225,6 +225,22 @@ organizer_id: num | *required* |
 
 ---
 
+///EDIT EXISTING POTLUCK///
+
+#### [POST] "/potlucks/:id/edit"
+
+name: "string" | *required* | 
+time: "string | *required* |
+date: "string | *required* |
+location: "string | *required* |
+
+
+| *valid token required* | *only organizers can access* | *requires valid potluck_id* |
+
+*Returns updated potluck*
+
+---
+
 ///INVITE GUEST///
 
 #### [POST] "/potlucks/:id/guests"
